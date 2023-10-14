@@ -5,18 +5,18 @@ import { useState, useEffect } from 'react';
 import { signIn, signOut, useSession, getProviders } from 'next-auth/react';
 
 const Nav = () => {
-  const { data: session} = useSession();
+  const { data: session } = useSession();
   const [providers, setProviders] = useState(null);
   const [toggleDropDown, settoggleDropDown] = useState(false);
 
   useEffect(() => {
-    const setProviders = async () => {
+    const setUpProviders = async () => {
       const response = await getProviders();
 
       setProviders(response);
     }
 
-    setProviders();
+    setUpProviders();
   }, [])
 
   return (
@@ -32,23 +32,21 @@ const Nav = () => {
         <p className="logo_text">Promtopia</p>
       </Link>
 
-      
-
       {/* Desktop Navigation */}
       <div className="sm:flex hidden">
         {session?.user ? (
           <div className='flex gap-3 md:gap-5'>
-            <Link href="/create-promt" className='black_btn' >Create Post</Link>
-            <button className="outline_btn" type='button'>Sign Out</button>
+            <Link href="/create-prompt" className='black_btn' >Create Post</Link>
+            <button className="outline_btn" type='button' onClick={signOut}>Sign Out</button>
             <Link href="/profile">
               <Image
-                src="/assets/images/logo.svg"
+                src={session?.user.image}
                 width={37}
                 height={37}
                 className='rounded-full'
                 alt='profile'
               />
-            </Link>
+            </Link> 
           </div>
         ) : (
           <div>
@@ -62,6 +60,7 @@ const Nav = () => {
                 >
                   Sign In
                 </button>
+
               ))}
           </div>
         )}
@@ -73,7 +72,7 @@ const Nav = () => {
         {session?.user ? (
           <div className='flex'>
             <Image
-              src="/assets/images/logo.svg"
+              src={session?.user.image}
               width={37}
               height={37}
               className='rounded-full'
@@ -122,6 +121,7 @@ const Nav = () => {
                 >
                   Sign In
                 </button>
+              
               ))}
           </div>
         )}
