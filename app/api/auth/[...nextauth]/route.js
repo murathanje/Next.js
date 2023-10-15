@@ -3,7 +3,7 @@ import GoogleProvider from 'next-auth/providers/google';
 
 import User from '@models/user';
 import { connectToDB } from '@utils/database';
-const password = encodeURIComponent("<password>");
+
 const handler = NextAuth({
     providers: [
         GoogleProvider({
@@ -19,7 +19,7 @@ const handler = NextAuth({
 
             return session;
         },
-        async signIn({ account, profile, user, credentials }) {
+        async signIn({ profile }) {
             try {
                 await connectToDB();
 
