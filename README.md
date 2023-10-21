@@ -1,4 +1,19 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## PROMTOPIA
+
+This app is created by Next.js, MongoDB, NextAuth and Tailwind. 
+
+This app has features that allows to users sign in and sign up, create post, edit posts, delete posts and copy posts
+
+### [You can visit the live demo on this link](https://www.promtopia.vercel.app)
+
+![Ekran görüntüsü 2023-10-21 163619](https://github.com/murathanje/Next.js/assets/96828156/5dbadc83-f03b-4f86-a4be-ccefe12fa957)
+
+![Ekran görüntüsü 2023-10-21 163651](https://github.com/murathanje/Next.js/assets/96828156/b8debb59-3061-4578-91c7-4ec03a7f6737)
+
+
+![Ekran görüntüsü 2023-10-21 163707](https://github.com/murathanje/Next.js/assets/96828156/4fd64aad-cdaa-434f-ba89-8ccae29a5c6d)
+
 
 ## Getting Started
 
